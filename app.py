@@ -1,13 +1,11 @@
 import os
 import streamlit as st
-from dotenv import load_dotenv
 from langchain.prompts import ChatPromptTemplate
 from langchain.memory import ConversationBufferMemory
 from langchain_groq import ChatGroq
 
-# Load environment variables
-load_dotenv()
-groq_api_key = os.getenv("GROQ_API_KEY") or st.secrets["GROQ_API_KEY"]
+
+groq_api_key = st.secrets["GROQ_API_KEY"]
 
 # Initialize chatbot
 chat_bot = ChatGroq(model="gemma-2b-it", api_key=groq_api_key, temperature=0.5, max_tokens=500)
