@@ -8,7 +8,7 @@ from langchain_groq import ChatGroq
 groq_api_key = st.secrets["GROQ_API_KEY"]
 
 # Initialize chatbot
-chat_bot = ChatGroq(model="gemma-2b-it", api_key=groq_api_key, temperature=0.5, max_tokens=500)
+chat_bot = ChatGroq(model="gemma2-9b-it", api_key=groq_api_key, temperature=0.5, max_tokens=500)
 
 # Streamlit UI
 st.set_page_config(page_title="AI Interview Assistant", layout="wide")
